@@ -6,14 +6,14 @@ import Chess from './images/chess_play.gif';
 import Weather from './images/Weather.gif';
 import Photo from './images/photo.png'
 import Resume from './images/MuhammedHaddadCV.pdf'
-import React, { useState,useRef } from 'react';
+import React, { useState } from 'react';
 import useClipboard from './Clip'
-import { faDownload, faUser, faG } from '@fortawesome/free-solid-svg-icons'
+import { faDownload, faUser, } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const NavbarPage = () => {
 
-  const emailRef = useRef(null);
+  
   const { isCopied, copyToClipboard } = useClipboard();
   const [activeButton, setActiveButton] = useState(null);
 
@@ -48,7 +48,8 @@ const NavbarPage = () => {
     <div >
       
       <nav id="navbar-example2" class="navbar navbar-light bg-white px-3">
-        <a class="navbar-brand">Muhammed Haddad</a>
+        {/* eslint-disable-next-line*/}
+        <a class="navbar-brand" href='#'>Muhammed Haddad</a>
         <ul class="nav nav-pills" >
           <div class="btn-group" role="group" aria-label="Basic outlined example">
             <button type="button" className={`btn ${activeButton === 'Home' ? 'btn btn-dark' : 'btn-outline-dark'}`}
@@ -130,7 +131,7 @@ const NavbarPage = () => {
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <div class="container">
                   <div class="card flex-row flex-wrap">
-                    <img src="https://universityvacancies.com/sites/default/files/main_image_0.jpg" className="Institution"></img>
+                    <img src="https://universityvacancies.com/sites/default/files/main_image_0.jpg" alt=""className="Institution"></img>
                     <div class="card-block px-2">
                       <div class="card-body">
                         <h5 class="card-title Bachelor">Bachelor of Science (Hons) in Computing</h5>
@@ -594,7 +595,7 @@ const NavbarPage = () => {
                 <div class="card">
 
                   <div class="card-body">
-                    <img src={Weather} class="card-img-top" alt="Sample Image" style={pongImageSize} ></img>
+                    <img src={Weather} class="card-img-top" alt="Sample" style={pongImageSize} ></img>
                     <h5 class="card-title mt-4">Weather App</h5>
                     <p class="card-text">Made with C# Blazor WebAssembly</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -629,7 +630,7 @@ const NavbarPage = () => {
             <div className='col-4'>
               <div class="container mt-4" >
                 <div class="card" >
-                  <img src={Chess} class="card-img-top" alt="Sample Image" style={pongImageSize}></img>
+                  <img src={Chess} class="card-img-top" alt="Sample" style={pongImageSize}></img>
                   <div class="card-body">
                     <h5 class="card-title">Chess App</h5>
                     <p class="card-text">Made with Ruby</p>
@@ -664,7 +665,7 @@ const NavbarPage = () => {
             <div className='col-4'>
               <div class="container mt-4" >
                 <div class="card" >
-                  <img src={Pong} class="card-img-top" alt="Sample Image" style={pongImageSize}></img>
+                  <img src={Pong} class="card-img-top" alt="Sample" style={pongImageSize}></img>
                   <div class="card-body">
                     <h5 class="card-title">Ping Pong App</h5>
                     <p class="card-text">Made with Ruby</p>
@@ -731,9 +732,10 @@ const NavbarPage = () => {
           <div className='col-5'>
             <div class="container mt-4" style={{ height: '1000px' }}>
               <div class="card" style={{ width: '100%', backgroundColor: '#292f2f', height: '500px' }}>
-                <img src={Photo} style={{
+                
+                <img src={Photo}  alt=""style={{
                   height: '100px', width: '100px', borderRadius: '50%', marginTop: '5%', marginLeft: '40%',
-                  paddingTop: '1%'
+                  paddingTop: '1%' 
                 }}></img>
                 <div class="card-body">
                   <p className='card-text text-white' style={{ paddingLeft: '30%', fontSize: '25px', fontFamily: 'Arial' }}>Muhammed Haddad</p>
@@ -791,7 +793,7 @@ const NavbarPage = () => {
             <div className='col-4'>
 
               <p className='text-white' style={{ fontSize: '20px' }}>Let's Chat</p>
-              <a className='text-white' style={{ fontSize: '17px' }}><i class="fa fa-phone" style={{ paddingRight: '2%' }}></i>Phone</a>
+              <p className='text-white' style={{ fontSize: '17px' }}><i class="fa fa-phone" style={{ paddingRight: '2%' }}></i>Phone</p>
               <p className='text-white' style={{ fontSize: '17px' }}><i class="fa fa-envelope" style={{ paddingRight: '2%' }}></i>mhaddad.dev@gmail.com</p>
               <p className='text-white' style={{ fontSize: '17px' }}><i class="fa fa-map" style={{ paddingRight: '2%' }}></i>Dublin, Ireland</p>
               <div className='row' style={{ marginLeft: '15%', marginTop: '5%', marginRight: '5%' }}>
