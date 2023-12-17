@@ -1,7 +1,7 @@
 
 import './App.css';
 import NavbarPage from './Navbar';
-import './Profile'
+
 
 function App() {
   return (
